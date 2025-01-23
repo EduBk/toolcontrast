@@ -22,6 +22,7 @@ import { Button } from "@/components/ui/button";
 import { FaCloudArrowUp } from "react-icons/fa6";
 
 import { useColors } from "@/context/ColorContext";
+import { useState } from "react";
 
 type TypoeCardProps = {
   type?: "progress" | "profile" | "chart" | "storage" | "calendar"; // Hacerlo opcional
@@ -39,7 +40,7 @@ export const TypeCard: React.FC<TypoeCardProps> = ({
   buttons,
 }) => {
   const { textColor, bgColor } = useColors();
-  const [date, setDate] = React.useState(new Date());
+  const [date, setDate] = useState<Date | undefined>(new Date());
 
   const chartData = [
     { month: "January", desktop: 186, mobile: 80 },
@@ -60,6 +61,8 @@ export const TypeCard: React.FC<TypoeCardProps> = ({
       color: "hsl(var(--chart-2))",
     },
   };
+
+  
 
   // Estilos dinámicos para los botones
   const getButtonStyles = (type: string) => {
