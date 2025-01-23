@@ -82,8 +82,8 @@ export const ColorProvider: React.FC<{ children: React.ReactNode }> = ({ childre
   }, []);
 
   const swapColors = useCallback(() => {
-    setTextColor((prev) => bgColor);
-    setBgColor((prev) => textColor);
+    setTextColor(() => bgColor);
+    setBgColor(() => textColor);
   }, [textColor, bgColor]);
 
   const getRandomColors = useCallback(() => {
