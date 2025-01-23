@@ -1,0 +1,25 @@
+services:
+  tool-c:
+    container_name: tool-c
+    build:
+      context: .
+      target: dev
+      dockerfile: Dockerfile
+    ports:
+      - "3000:3000"
+    restart: always
+    develop:
+      watch:
+        - action: sync
+          path: ./
+          target: /app/
+          ignore:
+            - node_modules/
+        - action: rebuild
+          path: package.json
+    volumes:
+      - .:/app
+      - node_modules:/app/node_modules
+
+volumes:
+  node_modules:  # Añade esta sección
