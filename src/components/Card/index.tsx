@@ -2,11 +2,12 @@ import React from "react";
 import { TypeCard } from "./TypeCard";
 
 type card = {
-  title: string;
+  title?: string;
   description?: string;
   tags?: string[];
   buttons?: string;
-  type?: "progress" | "profile" | "chart" | "storage" | "calendar";
+  index: number
+  type?: string;
 };
 
 const CustomCard = (card: card, index: number) => {

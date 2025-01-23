@@ -25,8 +25,8 @@ import { useColors } from "@/context/ColorContext";
 import { useState } from "react";
 
 type TypoeCardProps = {
-  type?: "progress" | "profile" | "chart" | "storage" | "calendar"; // Hacerlo opcional
-  title: string;
+  type?: string;
+  title?: string;
   description?: string; // Hacerlo opcional
   tags?: string[];
   buttons?: string; // Hacerlo opcional
