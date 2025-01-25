@@ -4,6 +4,7 @@ import Image from "next/image";
 
 import { ColorPicker } from "@/components/ColorPicker";
 import { MasonryGrid } from "../Grid";
+import { Modal } from "@/components/Modal";
 
 function Layout() {
   const { swapColors, getRandomColors, getContrastRatio, getWCAGCompliance } =
@@ -70,18 +71,16 @@ function Layout() {
             }}
           />
           <ColorPicker isTextColor={false} />
-        </div>
-        <div className="flex justify-around items-center">
-          <Button
-            className="font-bold bg-black text-white mr-4"
-            onClick={() => {
-              getRandomColors();
-            }}
-          >
-            <span>Random</span>
-          </Button>
           {/* <Modal /> */}
         </div>
+        <Button
+          className="font-bold bg-black text-white mr-4"
+          onClick={() => {
+            getRandomColors();
+          }}
+        >
+          <span>Random</span>
+        </Button>
       </section>
       <section className="w-4/6">
         <MasonryGrid />

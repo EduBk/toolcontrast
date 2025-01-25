@@ -18,7 +18,7 @@ const Header = () => {
         </div>
         <a
           className="flex items-center cursor-pointer"
-          href="https://github.com/EduBk/magic-contrast"
+          href="https://github.com/EduBk/toolcontrast"
           target="_blank"
         >
           <svg
